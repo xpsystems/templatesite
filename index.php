@@ -6,37 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($site_config['site_title']) ?></title>
     <meta name="description" content="<?= htmlspecialchars($site_config['site_description']) ?>">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="nav-header">
-        <div class="nav-inner">
-            <a href="/" class="nav-logo"><?= htmlspecialchars($site_config['site_name']) ?></a>
-            
-            <div class="nav-links">
-                <?php foreach ($nav_links as $link): ?>
-                    <a href="<?= htmlspecialchars($link['url']) ?>" class="nav-link"><?= htmlspecialchars($link['label']) ?></a>
-                <?php endforeach; ?>
-            </div>
-
-            <div class="nav-right">
-                <?php include 'components/theme-toggle.php'; ?>
-                <button class="nav-hamburger" aria-label="Toggle menu">
-                    <svg class="icon-hamburger" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-                    <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-                </button>
-            </div>
-        </div>
-    </nav>
-    <div class="nav-overlay"></div>
+    <?php include 'components/navbar.php'; ?>
 
     <!-- Hero Section -->
     <header class="hero">
@@ -72,21 +52,7 @@
         </svg>
     </div>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-brand">
-                    <span class="footer-logo"><?= htmlspecialchars($site_config['site_name']) ?></span>
-                    <span class="footer-copy">&copy; <?= htmlspecialchars($site_config['current_year']) ?> XP-Systems</span>
-                    <span class="footer-version"><?= htmlspecialchars($site_config['version']) ?></span>
-                </div>
-                <div class="footer-right">
-                    <?php include 'components/theme-toggle.php'; ?>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include 'components/footer.php'; ?>
 
     <script src="script.js"></script>
 </body>
